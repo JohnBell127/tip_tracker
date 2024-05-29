@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1@z!9g&+k$ida97kxdz_!2$bmmy)xa*h8md6mrdw=4)#0et411
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # Required for allauth
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    'tip_app',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'tip_tracker.urls'
@@ -67,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tip_tracker.wsgi.application'
+WSGI_APPLICATION = 'tip_tracker.wsgi.app'
 
 
 # Database
