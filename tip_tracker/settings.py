@@ -84,11 +84,15 @@ WSGI_APPLICATION = 'tip_tracker.wsgi.app'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:qwvDqFiXUQejfaHUURXpVuxZVDGpSOFA@monorail.proxy.rlwy.net:35066/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'qwvDqFiXUQejfaHUURXpVuxZVDGpSOFA',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': 35066,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
